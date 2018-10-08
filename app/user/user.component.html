@@ -1,0 +1,21 @@
+<ActionBar title="Title" class="action-bar"></ActionBar>
+
+<GridLayout class="p-40" rows="*,auto,*">
+
+	<RadDataForm #myCommitDataForm  (propertyCommit)="dfPropertyCommit($event)" tkExampleTitle tkToggleNavButton [source]="newUser" >
+		<TKEntityProperty tkDataFormProperty name="firstName" displayName="First name" index="0">
+			<TKNonEmptyValidator tkEntityPropertyValidators errorMessage="First name can't be empty."></TKNonEmptyValidator>
+			<TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
+		</TKEntityProperty>
+		<TKEntityProperty tkDataFormProperty name="lastName" displayName="Last name" index="0">
+			<TKNonEmptyValidator tkEntityPropertyValidators errorMessage="Last name can't be empty."></TKNonEmptyValidator>
+			<TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
+		</TKEntityProperty>
+		<TKEntityProperty tkDataFormProperty name="organization" displayName="Organization" index="0">
+			<TKNonEmptyValidator tkEntityPropertyValidators errorMessage="Organization can't be empty."></TKNonEmptyValidator>
+			<TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
+		</TKEntityProperty>
+	</RadDataForm>
+	<Button row="1" text="Submit" class="button" (tap)="onSubmit()"></Button>
+	<Button row="2" verticalAlignment="bottom" class="button" text="All users" [nsRouterLink]="['/home']"></Button>
+</GridLayout>

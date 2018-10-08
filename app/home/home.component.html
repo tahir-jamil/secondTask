@@ -1,0 +1,14 @@
+<ActionBar title="Users List" class="action-bar">
+</ActionBar>
+
+<GridLayout columns="*">
+	<ListView class="list-group" [items]="users" (itemTap)="onItemTap($event)">
+		<ng-template let-item="item">
+				<StackLayout col="1" verticalAlignment="middle" class="list-item-align">
+					<Label [text]="item.firstName" class="align-name text-left"></Label>
+					<Label [text]="item.lastName" class="align-name text-left"></Label>
+					<Label [text]="item.organization" class="org text-left"></Label>
+				</StackLayout>
+		</ng-template>
+	</ListView>
+</GridLayout>
